@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 var hebergementschema = new Schema({
   name: String,
-  gps: String,
+  lattitude: String,
+  longitude: String,
   description: String,
 });
 

@@ -11,9 +11,9 @@ function startApp() {
   
   var btnPostHebergement = document.getElementById('send-hebergement');
   btnPostHebergement.addEventListener('click', () => {
-    $.post( "http://localhost:3000/postHebergement", { name: "Pullman Hotel", gps: "43.608459, 1.453535", description: "Lorem ipsoume" })
-    .done( hebergement => {
-      console.log( "request success", hebergement );
+    $.post( "http://localhost:3000/postHebergement", { name: "Pullman Hotel", lattitude: "43.608459", longitude: "1.453535", description: "Lorem ipsoume" })
+    .done( dataH => {
+      console.log( "request success", dataH );
       pageList.style.display = 'block';
     })
     .fail(function(e) {
@@ -24,14 +24,13 @@ function startApp() {
   
 }
 
-
 var pageList = document.getElementById('showdata');
 
   var btnPostInteret = document.getElementById('send-interet');
   btnPostInteret.addEventListener('click', () => {
-    $.post( "http://localhost:3000/postInteret", { name: "Mairie de Toulouse", gps: "43.604310, 1.443827", description: "Lorem ipsoume" })
-    .done( interet => {
-      console.log( "request success", interet );
+    $.post( "http://localhost:3000/postInteret", { name: "Mairie de Toulouse", lattitude: "43.604310", longitude: "1.443827", description: "Lorem ipsoume" })
+    .done( dataI => {
+      console.log( "request success", dataI );
       pageList.style.display = 'block';
     })
     .fail(function(e) {

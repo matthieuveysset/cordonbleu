@@ -2,13 +2,15 @@ const collections = require('../collections');
 
 module.exports = async function(req, res, next) {
   var name = (req.body.name || '');
-  var gps = (req.body.gps || '');
+  var lattitude = (req.body.lattitude || '');
+  var longitude = (req.body.longitude || '');
   var description = (req.body.description || '');
 
   console.log(req.body);
   collections.Hebergement.create({
     name:name,
-    gps:gps,
+    lattitude:lattitude,
+    longitude:longitude,
     description:description,
   }).then(okHebergement => {
     console.log(okHebergement);
